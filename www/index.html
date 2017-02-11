@@ -29,12 +29,20 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <!-- Angular resource -->
+    <script src="lib/angular-resource/angular-resource.js"></script>
+
     <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
+    <script src="js/app.module.js"></script>
+    <script src="js/app.config.js"></script>
+
+    <script src="js/services/stories.service.js"></script>
+
+    <script src="js/stories/stories.controller.js"></script>
+    <script src="js/stories/stories.route.js"></script>
   </head>
 
-  <body ng-app="starter">
+  <body ng-app="hn-ionic">
     <ion-nav-view></ion-nav-view>
   </body>
 </html>
