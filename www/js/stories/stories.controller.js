@@ -3,9 +3,10 @@ angular
   .controller('StoriesController', StoriesController);
 
 function StoriesController($scope, storiesService) {
+  $scope.loadMore = loadMore;
+  $scope.page = 0;
   $scope.storyIds = [];
   $scope.stories = [];
-  $scope.page = 0;
 
   getTopStoryIds();
 
@@ -22,5 +23,8 @@ function StoriesController($scope, storiesService) {
         $scope.stories.push(response);
       });
     }
+
+    $scope.$broadcast('scroll.infiniteScrollComplete');
+    $scope.page++;
   }
 }
