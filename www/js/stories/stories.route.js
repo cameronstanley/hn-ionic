@@ -5,7 +5,7 @@ angular
 function routes($stateProvider) {
   $stateProvider
     .state('app.stories', {
-      url: '/stories',
+      url: '/stories?type',
       views: {
         'menuContent': {
           templateUrl: 'templates/stories.html',

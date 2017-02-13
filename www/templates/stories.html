@@ -1,4 +1,4 @@
-<ion-view view-title="Stories">
+<ion-view view-title="{{type | capitalize}} Stories">
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="story in stories" href="#/app/stories/{{story.id}}">

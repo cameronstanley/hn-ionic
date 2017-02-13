@@ -3,5 +3,8 @@ angular
       'ionic',
       'ngCordova',
       'ngResource',
-      'angularMoment'
+      'angularMoment',
+
+      'hn-ionic.filters',
+      'hn-ionic.services'
   ]);

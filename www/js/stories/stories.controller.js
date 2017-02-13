@@ -2,25 +2,44 @@ angular
   .module('hn-ionic')
   .controller('StoriesController', StoriesController);
 
-function StoriesController($ionicLoading, $scope, storiesService) {
+function StoriesController($ionicLoading, $scope, $stateParams, storiesService) {
   $scope.loadMore = loadMore;
   $scope.page = 0;
   $scope.storyIds = [];
   $scope.stories = [];
+  $scope.type = $stateParams.type;
 
   var perPage = 20;
 
-  getTopStoryIds();
+  getStoryIds();
 
-  function getTopStoryIds() {
+  function getStoryIds() {
     $ionicLoading.show({
-      template: "<p>Loading...</p><ion-spinner></ion-spinner>"
+      template: '<p>Loading...</p><ion-spinner></ion-spinner>'
     });
 
-    storiesService.top(function(response) {
-      $scope.storyIds = response;
-      loadMore();
-    });
+    switch ($scope.type) {
+      case 'top':
+        storiesService.top(_getStoryIdsSuccess);
+        break;
+      case 'new':
+        storiesService.new(_getStoryIdsSuccess);
+        break;
+      case 'best':
+        storiesService.best(_getStoryIdsSuccess);
+        break;
+      case 'ask':
+        storiesService.ask(_getStoryIdsSuccess);
+        break;
+      case 'show':
+        storiesService.show(_getStoryIdsSuccess);
+        break;
+      case 'job':
+        storiesService.job(_getStoryIdsSuccess);
+        break;
+      default:
+        storiesService.top(_getStoryIdsSuccess);
+    }
   }
 
   function loadMore() {
@@ -33,5 +52,10 @@ function StoriesController($ionicLoading, $scope, storiesService) {
     $scope.$broadcast('scroll.infiniteScrollComplete');
     $scope.page++;
     $ionicLoading.hide();
+  }
+
+  function _getStoryIdsSuccess(response) {
+    $scope.storyIds = response;
+    loadMore();
   }
 }

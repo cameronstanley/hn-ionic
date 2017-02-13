@@ -27,5 +27,5 @@ angular
         templateUrl: 'templates/menu.html'
       });
 
-      $urlRouterProvider.otherwise('/app/stories');
+      $urlRouterProvider.otherwise('/app/stories?type=top');
   }
