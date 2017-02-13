@@ -2,5 +2,6 @@ angular
   .module('hn-ionic', [
       'ionic',
       'ngCordova',
-      'ngResource'
+      'ngResource',
+      'angularMoment'
   ]);

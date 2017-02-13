@@ -2,7 +2,8 @@
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="story in stories" href="#/app/stories/{{story.id}}">
-        {{story.title}}
+        <h2>{{story.title}}</h2>
+        <p>{{story.score}} points by {{story.by}} <span am-time-ago="story.time | amFromUnix"></span> | {{story.descendants}} comments</p>
       </ion-item>
     </ion-list>
     <ion-infinite-scroll on-infinite="loadMore()">
