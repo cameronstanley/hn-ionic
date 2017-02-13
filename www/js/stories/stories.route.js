@@ -12,5 +12,15 @@ function routes($stateProvider) {
           controller: 'StoriesController'
         }
       }
+    })
+
+    .state('app.story', {
+      url: '/stories/:id',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/story.html',
+          controller: 'StoryController'
+        }
+      }
     });
 }

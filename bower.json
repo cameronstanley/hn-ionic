@@ -8,6 +8,7 @@
     "angular": "1.5.3"
   },
   "dependencies": {
-    "angular-resource": "1.5.3"
+    "angular-resource": "1.5.3",
+    "ngCordova": "^0.1.27-alpha"
   }
 }

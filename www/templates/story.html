@@ -1,5 +1,10 @@
 <ion-view view-title="{{story.title}}">
   <ion-content>
-    <h1>{{story.title}}</h1>
+    <div ng-if="story.url">
+      <div id="story-content"></div>
+    </div>
+    <div ng-if="!story.url">
+      <h1>{{story.title}}</h1>
+    </div>
   </ion-content>
 </ion-view>
