@@ -1,0 +1,5 @@
+<div class="item item-text-wrap">
+  <p>{{comment.by}} <span am-time-ago="comment.time | amFromUnix"></span></p>
+  <div ng-bind-html="comment.text | trustAsHtml"></div>
+  <comment-card ng-repeat="childId in comment.kids" comment-id="childId" class="card"></comment-card>
+</div>

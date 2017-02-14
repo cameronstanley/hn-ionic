@@ -11,6 +11,7 @@
     "angular-resource": "1.5.3",
     "ngCordova": "^0.1.27-alpha",
     "angular-moment": "^1.0.1",
-    "moment": "^2.17.1"
+    "moment": "^2.17.1",
+    "angular-recursion": "^1.0.5"
   }
 }

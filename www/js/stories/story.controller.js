@@ -2,13 +2,13 @@ angular
   .module('hn-ionic')
   .controller('StoryController', StoryController);
 
-function StoryController($cordovaInAppBrowser, $scope, $stateParams, storiesService) {
+function StoryController($cordovaInAppBrowser, $scope, $stateParams, itemsService) {
   $scope.story = {};
 
   getStory();
 
   function getStory() {
-    storiesService.get({id: $stateParams.id}, function(response) {
+    itemsService.get({id: $stateParams.id}, function(response) {
       $scope.story = response;
 
       if ($scope.story.url) {

@@ -23,15 +23,18 @@
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-    <!-- ionic/angularjs js -->
+    <!-- Ionic/AngularJS js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
+    <!-- Cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <script src="lib/ngCordova/dist/ng-cordova.js"></script>
 
     <!-- Angular resource -->
     <script src="lib/angular-resource/angular-resource.js"></script>
+
+    <!-- Angular recursion -->
+    <script src="lib/angular-recursion/angular-recursion.min.js"></script>
 
     <!-- Moment -->
     <script src="lib/moment/moment.js"></script>
@@ -41,12 +44,18 @@
     <script src="js/app.module.js"></script>
     <script src="js/app.config.js"></script>
 
+    <!-- Components -->
+    <script src="js/components/components.module.js"></script>
+    <script src="js/components/comment-card.directive.js"></script>
+
     <!-- Filters -->
     <script src="js/filters/filters.module.js"></script>
     <script src="js/filters/capitalize.filter.js"></script>
+    <script src="js/filters/trust-as-html.filter.js"></script>
 
     <!-- Services -->
     <script src="js/services/services.module.js"></script>
+    <script src="js/services/items.service.js"></script>
     <script src="js/services/stories.service.js"></script>
 
     <script src="js/stories/stories.controller.js"></script>

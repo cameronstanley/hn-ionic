@@ -1,10 +1,23 @@
 <ion-view view-title="{{story.title}}">
   <ion-content>
-    <div ng-if="story.url">
-      <div id="story-content"></div>
+    <div id="story-content"></div>
+    <div class="card">
+      <div class="item item-divider item-text-wrap">
+        <h2>{{story.title}}</h2>
+      </div>
+      <div class="item item-text-wrap">
+        <p>{{story.score}} points by {{story.by}} <span am-time-ago="story.time | amFromUnix"></span> | {{story.descendants}} comments</p>
+        <div ng-bind-html="story.text | trustAsHtml"></div>
+      </div>
     </div>
-    <div ng-if="!story.url">
-      <h1>{{story.title}}</h1>
+    <div class="card">
+      <div class="item item-divider">
+        <h2>Comments</h2>
+      </div>
+      <div class="item">
+        <comment-card ng-repeat="commentId in story.kids" comment-id="commentId" class="card">
+        </comment-card>
+      </div>
     </div>
   </ion-content>
 </ion-view>

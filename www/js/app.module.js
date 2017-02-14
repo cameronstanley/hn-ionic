@@ -4,7 +4,9 @@ angular
       'ngCordova',
       'ngResource',
       'angularMoment',
+      'RecursionHelper',
 
       'hn-ionic.filters',
+      'hn-ionic.components',
       'hn-ionic.services'
   ]);
