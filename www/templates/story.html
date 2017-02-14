@@ -8,6 +8,9 @@
       <div class="item item-text-wrap">
         <p>{{story.score}} points by {{story.by}} <span am-time-ago="story.time | amFromUnix"></span> | {{story.descendants}} comments</p>
         <div ng-bind-html="story.text | trustAsHtml"></div>
+				<button ng-if="story.url" ng-click="viewLinkViaInAppBrowser()" class="button">
+					View Link
+				</button>
       </div>
     </div>
     <div class="card">

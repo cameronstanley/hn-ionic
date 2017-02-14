@@ -4,6 +4,7 @@ angular
 
 function StoryController($cordovaInAppBrowser, $scope, $stateParams, itemsService) {
   $scope.story = {};
+  $scope.viewLinkViaInAppBrowser = viewLinkViaInAppBrowser;
 
   getStory();
 
@@ -12,16 +13,20 @@ function StoryController($cordovaInAppBrowser, $scope, $stateParams, itemsServic
       $scope.story = response;
 
       if ($scope.story.url) {
-        var options = {
-          location: 'yes',
-          clearcache: 'yes',
-          toolbar: 'yes'
-        };
-
-        document.addEventListener("deviceready", function () {
-          $cordovaInAppBrowser.open($scope.story.url, '#story-content', options);
-        }, false);
+        viewLinkViaInAppBrowser();
       }
     });
+  }
+
+  function viewLinkViaInAppBrowser() {
+    var options = {
+      location: 'yes',
+      clearcache: 'yes',
+      toolbar: 'yes'
+    };
+
+    document.addEventListener("deviceready", function () {
+      $cordovaInAppBrowser.open($scope.story.url, '#story-content', options);
+    }, false);
   }
 }
